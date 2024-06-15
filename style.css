@@ -1,0 +1,281 @@
+*{
+    margin: 0;
+    padding: 0;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    height: 20vh;
+    background: #4B4B6A;
+    padding: 0 50px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nombre {
+    text-transform: uppercase;
+    color: #6cc091;
+    font-weight: 200;
+}
+
+.menu a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.mostrar-menu,
+.esconder-menu {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+}
+
+.mostrar-menu {
+    order: 1;
+}
+
+.menu a:hover, .mostrar-menu:hover,
+.esconder-menu:hover {
+    color: #6cc091;
+}
+
+#check {
+    display: none;
+}
+
+/*banner */
+#banner {
+    padding: 0 50px;
+    background-image: url(./images/fndo2.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#banner::before {
+    content: '';
+    background: rgba(77, 77, 92, 0.6);
+    position: absolute;
+    width: 100%; 
+    height: 60vh;
+    left: 0;
+}
+
+.contenido-banner, .imagen-banner{
+    position: relative;
+    color: #fff;
+    width: 30%;
+}
+.imagen-banner{
+    width: 80%;
+    align-self: center;
+}
+.contenido-banner h3 {
+    font-size: 20px;
+    padding: 10px 0px;
+}
+.contenido-banner h3 span{
+    font-size: 18px;
+}
+
+/*proyectos*/
+#proyectos{
+    padding: 50px 0px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+}
+.cards{
+    padding: 30px 30px;
+    width: 20%;
+}
+
+#proyectos .cards h4{
+    color: #4d4d5c;
+    font-size: 20px;
+    margin: 15px 0px;
+}
+#proyectos .cards p{
+    color: #4d4d5c87;
+    font-size: 18px;
+}
+.boton-saber-mas{
+    display: inline-block;
+    text-decoration: none;
+    color: #6cc091;
+    padding: 10px 30px;
+    border: 3px solid #6cc091;
+    border-radius: 30px;
+    margin-top: 15px;
+    transition: all 0.4s;
+}
+.boton-saber-mas:hover{
+    background: #6cc091;
+    color: #fff;
+}
+#proyectos img{
+    
+    width: 10rem;
+    height: 10rem;
+}
+/*contacto*/
+#contacto{
+    padding: 50px 0px;
+    background:#5A5A72;
+    color: #fff;
+}
+#contacto h4{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+#contacto form{
+    max-width: 80%;
+    margin: 0 auto;
+}
+.datos-form{
+    display: flex;
+}
+
+.datos-form div{
+    padding: 10px;
+    flex: 1;
+}
+form label{
+    display: block;
+    margin-bottom: 10px;
+}
+form input,
+form textarea{
+    background: #5A5A72;
+    border-radius: 10px;
+    border: 2px solid #6c6c85;
+    padding: 10px 5px;
+    outline: 0;
+    color: #fff;
+    width: 100%;
+}
+form input:focus,
+form textarea:focus{
+    border-color: #c3c3d5;
+    box-shadow: 0 0 0 1px #c3c3d5;
+}
+form input::placeholder,
+form textarea::placeholder{
+    color: #fff;
+}
+.mensaje{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.boton-formulario .boton-saber-mas{
+    display: block;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    transition: 0.4s;
+}
+.boton-formulario .boton-saber-mas:hover{
+    background: #4d4d5c;
+}
+/*footer*/
+footer {
+    background-color: #188082;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #b53838;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #FFA500; /* Color al hacer hover */
+}
+
+@media (max-width:768px){
+    .mostrar-menu,
+    .esconder-menu {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #4d4d5c;
+        
+        right: -100%;
+        top: 0 ;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;/*el valor tan alto es paara que siempre este sobre otros posibels*/
+        transition: 0.8s;
+    }
+
+    .menu a{
+        display: block;
+        padding: 20px;
+    }
+
+    .esconder-menu {
+        position:absolute;
+        top:40px;
+        right: 40px;
+    }
+    #check:checked ~ .menu {   /*cuando el seudo selector este chequeado y todos los elementos precedido del check que es menu. se ira a la derecha*/
+        right: 0%;
+    }
+
+    #banner{
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+    }
+    .contenido-banner, .imagen-banner{
+        width: 100%;
+    }
+    .img {
+        align-self: center;
+        width: 60%;
+    }
+    #banner::before{
+        height: 80vh;
+    }
+
+    /*proyectos*/
+    #proyectos{
+        flex-direction: column;
+       
+    }
+    #proyectos div{
+        width: 83%;
+    }
+
+    /*formulario*/
+    .datos-form{
+        flex-direction: column;
+    }
+    }
+
